@@ -207,3 +207,15 @@ body {
   margin-bottom: 10px;
   color: #969593;
 }
+
+/* Footer */
+.footer {
+  padding: 200px;
+  background-color: #36363d;
+}
+
+.footer p {
+  font-size: 50px;
+  color: #b2a993;
+  text-align: center;
+}
