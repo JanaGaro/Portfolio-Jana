@@ -6,7 +6,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* Navbar styles */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -48,7 +48,7 @@ body {
   color: #fff;
 }
 
-/* About Me section styles */
+/* About Me */
 .about-me {
   padding: 200px;
   background-color: #ffffff;
@@ -80,6 +80,7 @@ body {
   color: #969593;
 }
 
+/* Skills */
 .skills {
   padding: 200px;
   background-color: #36363d;
@@ -99,24 +100,98 @@ body {
   padding-left: 1000px; /* Abstand nach rechts */
 }
 
+/* Career */
+/* Timeline section */
+.career {
+  padding: 100px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
 .career h2 {
   font-size: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   color: #b2a993;
 }
 
-.career h3 {
+/* Timeline container */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 800px;
+}
+
+/* Timeline line in the middle */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background-color: #b2a993;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Even items aligned to the left */
+.timeline-item:nth-child(even) {
+  left: 0;
+  text-align: right;
+  padding-right: 30px; /* Reduced padding to keep circles close to the line */
+}
+
+/* Odd items aligned to the right */
+.timeline-item:nth-child(odd) {
+  left: 50%;
+  padding-left: 30px; /* Reduced padding to keep circles close to the line */
+  text-align: left;
+}
+
+/* Timeline content */
+.timeline-item h3 {
   font-size: 20px;
-  line-height: 1.6;
-  color: #969593;
+  color: #36363d;
+  margin: 0;
 }
 
-.career p {
+.timeline-item p {
   font-size: 15px;
-  line-height: 1.6;
   color: #969593;
+  margin: 5px 0;
 }
 
+/* Circle indicators */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 20px; /* Vertical alignment */
+  width: 15px;
+  height: 15px;
+  background-color: #b2a993;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  z-index: 1;
+}
+
+/* Circle positions for left and right aligned items */
+.timeline-item:nth-child(even)::before {
+  right: -40px; /* Ensure circles align evenly on the left */
+}
+
+.timeline-item:nth-child(odd)::before {
+  left: -40px; /* Ensure circles align evenly on the right */
+}
+
+/* Contact */
 .contact {
   padding: 200px;
   background-color: #f3f3f3;
