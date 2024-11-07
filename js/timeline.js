@@ -1,39 +1,57 @@
-var careerEvents = [{
-    date: 'Q1 - 2017',
-    content: 'Lorem ipsum dolor sit amet'
-}, {
-    date: 'Q2 - 2017',
-    content: 'Lorem ipsum dolor sit amet'
-}, {
-    date: 'Q3 - 2017',
-    content: 'Lorem ipsum dolor sit amet'
-},
-    {
-        date: 'Q3 - 2018',
-        content: 'Lorem ipsum dolor sit amet'
-    }
+var careerEvents = [
+  {
+    date: "August 2017 - Juli 2020",
+    content: "Ausbildung zur Kauffrau EFZ, Erlach",
+  },
+  {
+    date: "März 2022",
+    content: "Ausbildung zur Kauffrau EFZ, Le Landeron",
+  },
+  {
+    date: "Dezember 2021 - Januar 2022",
+    content: "Verwaltungsangestellte, Vinelz",
+  },
+  {
+    date: "September 2020 - Juli 2023",
+    content: "Verwaltungsangestellte, Erlach",
+  },
+  {
+    date: "August 2023 - Heute",
+    content: "Customer Service Mitarbeiterin, BKW Building Solutions AG",
+  },
 ];
 
-var educationEvents = [{
-    date: 'Q1 - 2017',
-    content: 'Lorem ipsum dolor sit amet'
-}, {
-    date: 'Q2 - 2017',
-    content: 'Lorem ipsum dolor sit amet'
-}, {
-    date: 'Q3 - 2017',
-    content: 'Lorem ipsum dolor sit amet'
-},
-    {
-        date: 'Q3 - 2018',
-        content: 'Lorem ipsum dolor sit amet'
-    }
+var educationEvents = [
+  {
+    date: "2008 - 2014",
+    content: "Primarschule, Gampelen",
+  },
+  {
+    date: "2014 - 2017",
+    content: "Oberstufenzentrum, Ins",
+  },
+  {
+    date: "2017 - 2020",
+    content: "BWT Berufs- und Weiterbildungszentrum, Lyss",
+  },
+  {
+    date: "2020 - 2022",
+    content: "Bwd Bildungszentrum für Wirtschaft und Dienstelistung, Bern",
+  },
+  {
+    date: "2020 - 2022",
+    content: "Bwd Bildungszentrum für Wirtschaft und Dienstelistung, Bern",
+  },
+  {
+    date: "2022 - Heute",
+    content: "Berner Fachhochschule, Bern",
+  },
 ];
 
-$('#career-timeline').roadmap(careerEvents, {
-    eventsPerSlide: 4
+$("#career-timeline").roadmap(careerEvents, {
+  eventsPerSlide: 5,
 });
 
-$('#education-timeline').roadmap(educationEvents, {
-    eventsPerSlide: 4
+$("#education-timeline").roadmap(educationEvents, {
+  eventsPerSlide: 6,
 });
