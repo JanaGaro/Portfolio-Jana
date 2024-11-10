@@ -25,17 +25,36 @@ body {
   color: #fff;
   font-size: 1.2rem;
 }
-/* styling home section starts */
 
-.h-btn:hover {
-  background: #b2a993;
-  color: #fff;
-  transform: translateY(-20px);
-  transition-duration: 1s;
+/* styling about section starts */
+#about {
+  display: flex;
+  align-items: center; /* Vertikale Zentrierung des Inhalts */
+  justify-content: center;
+  min-height: 100vh; /* Volle Bildschirmhöhe */
+  padding: 0%;
+}
+
+#about .row {
+  margin-top: 50px; /* Verschiebt den gesamten Inhalt nach unten */
+  margin-bottom: 0;
+}
+
+#about h2 {
+  font-size: 50px; /* Schriftgröße anpassen */
+  color: #b2a993; /* Schriftfarbe auf #b2a993 setzen */
+  font-weight: 700; /* Fettgedruckt für stärkere Betonung */
+  margin-bottom: 10px;
+}
+
+#about p {
+  font-size: 20px; /* Schriftgröße anpassen */
+  font-weight: 400; /* Fettgedruckt für stärkere Betonung */
+  margin-bottom: 10px;
 }
 
 /* adding animation to home section image  */
-.home img {
+.img-fluid {
   animation: floatimg 4s ease-in-out infinite;
 }
 
@@ -51,9 +70,32 @@ body {
   }
 }
 
+#about .img-fluid {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 0; /* Vermeidet zusätzlichen Abstand direkt unter dem Bild */
+}
+
+@media (max-width: 768px) {
+  #about .img-fluid {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  #about .img-fluid {
+    max-width: 150px;
+  }
+}
+
 /* skill section starts */
-.skill {
+#skills {
   background-color: #36363d;
+  border: 0;
+}
+
+.skill h3 {
+  color: #b2a993;
 }
 
 .progress-card {
