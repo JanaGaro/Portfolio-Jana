@@ -51,13 +51,13 @@ body {
   font-size: 80px; /* Schriftgröße anpassen */
   color: #b2a993; /* Schriftfarbe auf #b2a993 setzen */
   font-weight: 700; /* Fettgedruckt für stärkere Betonung */
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #about p {
   font-size: 20px; /* Schriftgröße anpassen */
   font-weight: 400; /* Fettgedruckt für stärkere Betonung */
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 /* adding animation to home section image  */
