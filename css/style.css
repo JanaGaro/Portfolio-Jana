@@ -40,8 +40,15 @@ body {
   margin-bottom: 0;
 }
 
-#about h2 {
+#about h1 {
   font-size: 50px; /* Schriftgröße anpassen */
+  color: #b2a993; /* Schriftfarbe auf #b2a993 setzen */
+  font-weight: 700; /* Fettgedruckt für stärkere Betonung */
+  margin-bottom: 10px;
+}
+
+#about h2 {
+  font-size: 80px; /* Schriftgröße anpassen */
   color: #b2a993; /* Schriftfarbe auf #b2a993 setzen */
   font-weight: 700; /* Fettgedruckt für stärkere Betonung */
   margin-bottom: 10px;
@@ -152,15 +159,18 @@ body {
 }
 
 /* career */
-.career h3 {
-  background-color: #ffffff;
+#career h3 {
   color: #b2a993;
+  font-size: 40px;
+  font-weight: semi-bold;
 }
 
 /* education */
 .education h3 {
   background-color: #ffffff;
   color: #b2a993;
+  font-size: 40px;
+  font-weight: semi-bold;
 }
 
 /* contact section starts */
