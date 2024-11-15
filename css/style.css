@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+html {
+  overflow-x: hidden;
+}
+
 /* appling google font over the website  */
 body {
   font-family: "Inter", sans-serif;
