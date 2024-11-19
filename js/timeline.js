@@ -48,10 +48,19 @@ var educationEvents = [
   },
 ];
 
-$("#career-timeline").roadmap(careerEvents, {
-  eventsPerSlide: 5,
+function loadTimelines() {
+  $("#career-timeline").roadmap(careerEvents, {
+    eventsPerSlide: 5,
+  });
+
+  $("#education-timeline").roadmap(educationEvents, {
+    eventsPerSlide: 6,
+  });
+}
+
+$(window).on("scroll", function () {
+  loadTimelines();
 });
 
-$("#education-timeline").roadmap(educationEvents, {
-  eventsPerSlide: 6,
-});
+// Initial load
+loadTimelines();
