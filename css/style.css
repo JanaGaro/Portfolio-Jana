@@ -80,7 +80,7 @@ body {
 }
 
 #about .img-fluid {
-  max-width: 400px;
+  max-width: 100%;
   height: auto;
   margin-bottom: 0; /* Vermeidet zusätzlichen Abstand direkt unter dem Bild */
 }
@@ -88,6 +88,8 @@ body {
 @media (max-width: 768px) {
   #about .img-fluid {
     max-width: 200px;
+    margin: 0 auto;
+    display: block;
   }
 }
 
