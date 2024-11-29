@@ -4,7 +4,7 @@ var careerEvents = [
     content: "Ausbildung zur Kauffrau EFZ, Erlach",
   },
   {
-    date: "März 2022",
+    date: "März 2020",
     content: "Ausbildung zur Kauffrau EFZ, Le Landeron",
   },
   {
@@ -17,7 +17,7 @@ var careerEvents = [
   },
   {
     date: "August 2023 - Heute",
-    content: "Customer Service Mitarbeiterin, BKW Building Solutions AG",
+    content: "Customer Service Mitarbeiterin ERP, BKW Building Solutions AG",
   },
 ];
 
