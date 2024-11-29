@@ -238,7 +238,7 @@ footer .link-group a:hover {
   background-color: #fff;
   padding: 14px 15px 10px 15px;
 }
-.social-links .dribble {
+.social-links .linkedin {
   color: #b2a993;
 }
 .social-links button:hover {
@@ -246,19 +246,13 @@ footer .link-group a:hover {
   transform: translateY(-20px);
   transition-duration: 1s;
 }
-.social-links .dribble:hover {
+.social-links .linkedin:hover {
   background-color: #b2a993;
 }
-.social-links .whatsapp {
+.social-links .github {
   color: #b2a993;
 }
-.social-links .whatsapp:hover {
-  background-color: #b2a993;
-}
-.social-links .behance {
-  color: #b2a993;
-}
-.social-links .behance:hover {
+.social-links .github:hover {
   background-color: #b2a993;
 }
 
