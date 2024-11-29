@@ -166,8 +166,10 @@ body {
 
 /* career */
 .career {
-  height: 100vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
+
 #career h3 {
   color: #b2a993;
   font-size: 40px;
@@ -176,7 +178,8 @@ body {
 
 /* education */
 .education {
-  height: 100vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .education h3 {
   background-color: #ffffff;
