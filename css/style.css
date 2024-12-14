@@ -217,7 +217,61 @@ body {
   width: 80%;
 }
 
-/* footer section starts */
+/* Lokale Nachrichten Sektion */
+#location-news-section {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  margin-top: 30px;
+}
+
+#location-news-section h2 {
+  font-size: 2rem;
+  color: #b2a993;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#location-info {
+  font-style: italic; /* Kursiver Text */
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Styling für die Nachrichten-Kacheln */
+#news-list {
+  display: flex; /* Flexbox für nebeneinanderliegende Kacheln */
+  gap: 20px; /* Abstand zwischen den Kacheln */
+  padding: 0;
+  justify-content: center; /* Zentriere die Kacheln horizontal */
+  list-style: none; /* Entfernt Aufzählungszeichen */
+}
+
+#news-list li {
+  background-color: #b2a993; /* Kachel-Hintergrundfarbe */
+  color: #fff; /* Textfarbe */
+  text-align: center; /* Zentrierte Schrift */
+  padding: 20px; /* Innenabstand der Kacheln */
+  border-radius: 10px; /* Abgerundete Ecken */
+  flex: 1; /* Alle Kacheln sind gleich groß */
+  max-width: 300px; /* Maximale Breite pro Kachel */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+  transition: transform 0.3s ease; /* Animation beim Hover */
+}
+
+#news-list li:hover {
+  transform: scale(1.05); /* Vergrößert die Kachel leicht beim Hover */
+}
+
+#news-list li a {
+  text-decoration: none; /* Entfernt Unterstreichung der Links */
+  color: #fff; /* Linkfarbe auf Weiß setzen */
+  font-size: 1.2rem; /* Schriftgröße der Links */
+  font-weight: bold; /* Fettgedruckte Links */
+  display: block; /* Link-Inhalt füllt die gesamte Kachel */
+}
+
+/* footer section */
 footer {
   background-color: #36363d;
 }
