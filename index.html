@@ -423,9 +423,29 @@
     <section id="location-news-section" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Lokale Nachrichten</h2>
+
+        <!-- Standortinformationen -->
         <p id="location-info" class="text-center text-muted">
           Standort wird ermittelt...
         </p>
+
+        <!-- Fallback-Nachricht (wird standardmäßig ausgeblendet) -->
+        <div
+          id="no-news-message"
+          style="
+            display: none;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #b2a993;
+            font-weight: bold;
+          "
+        >
+          Tut mir leid, aktuell haben wir keine Nachrichten in deiner Region.
+          <br />
+          Aber hier ist ein Witz:
+        </div>
+
+        <!-- Nachrichtenliste -->
         <ul id="news-list" class="list-unstyled mt-4"></ul>
       </div>
     </section>

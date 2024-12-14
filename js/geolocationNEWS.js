@@ -15,8 +15,6 @@ async function getCityFromCoordinates(lat, lon) {
         data.results[0].components.village ||
         "Unbekannter Ort";
       const country = data.results[0].components.country || "Unbekanntes Land";
-      const countryCode =
-        data.results[0].components["ISO_3166-1_alpha-2"] || "Unknown";
 
       // Zeige den Ort und das Land an
       document.getElementById(
@@ -24,7 +22,7 @@ async function getCityFromCoordinates(lat, lon) {
       ).innerText = `Standort: ${city}, ${country}`;
 
       // Nachrichten laden (unter Berücksichtigung von Sprache und Land)
-      fetchLocalNews(city, countryCode.toLowerCase());
+      fetchLocalNews(city);
     } else {
       document.getElementById("location-info").innerText =
         "Standort konnte nicht ermittelt werden.";
@@ -37,32 +35,75 @@ async function getCityFromCoordinates(lat, lon) {
 }
 
 // Funktion zum Abrufen von Nachrichten
-async function fetchLocalNews(city, countryCode) {
+async function fetchLocalNews(city) {
   const apiKey = "0c63feb51aa64e98bdbfe4a528eb5076";
 
-  // Erstelle die URL mit Suchbegriffen, Land und Sprache
   const url = `https://newsapi.org/v2/everything?q=${city}&language=de&apiKey=${apiKey}`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
 
+    const noNewsMessage = document.getElementById("no-news-message");
+    const newsList = document.getElementById("news-list");
+
     if (data.articles && data.articles.length > 0) {
-      // Zeige nur die ersten 3 Nachrichten
-      const firstThreeArticles = data.articles.slice(0, 3);
-      displayNews(firstThreeArticles);
+      // Nachrichten gefunden: Verberge den Hinweistext und zeige die Nachrichten
+      noNewsMessage.style.display = "none";
+      newsList.innerHTML = ""; // Liste zurücksetzen
+
+      const firstThreeArticles = data.articles.slice(0, 3); // Nur die ersten 3 Nachrichten
+      firstThreeArticles.forEach((article) => {
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+        newsList.appendChild(listItem);
+      });
+
+      // Nachrichten nebeneinander anzeigen
+      newsList.style.display = "flex";
     } else {
-      document.getElementById("news-list").innerHTML =
-        '<li class="text-center">Keine Nachrichten gefunden.</li>';
+      // Keine Nachrichten gefunden: Zeige Hinweistext und Witz
+      noNewsMessage.style.display = "block";
+      newsList.innerHTML = ""; // Liste zurücksetzen
+
+      // Witz hinzufügen
+      const jokeUrl = "https://v2.jokeapi.dev/joke/Any?lang=de";
+      const jokeResponse = await fetch(jokeUrl);
+      const jokeData = await jokeResponse.json();
+
+      let jokeText = "";
+      if (jokeData.type === "single") {
+        jokeText = jokeData.joke;
+      } else if (jokeData.type === "twopart") {
+        jokeText = `${jokeData.setup} - ${jokeData.delivery}`;
+      }
+
+      const jokeItem = document.createElement("li");
+      jokeItem.style.backgroundColor = "#b2a993";
+      jokeItem.style.color = "white";
+      jokeItem.style.padding = "20px";
+      jokeItem.style.borderRadius = "10px";
+      jokeItem.style.textAlign = "center";
+      jokeItem.innerHTML = jokeText;
+
+      newsList.appendChild(jokeItem);
+
+      // Nur Witz anzeigen (kein Flexbox-Layout für mehrere Kacheln)
+      newsList.style.display = "block";
     }
   } catch (error) {
-    console.error("Fehler beim Abrufen der Nachrichten:", error);
-    document.getElementById("news-list").innerHTML =
-      '<li class="text-center text-danger">Nachrichten konnten nicht geladen werden.</li>';
+    console.error(
+      "Fehler beim Abrufen der Nachrichten oder des Witzes:",
+      error
+    );
+    document.getElementById("news-list").innerHTML = `
+      <li class="text-center text-danger">
+        Weder Nachrichten noch Witze konnten geladen werden. 😢
+      </li>`;
   }
 }
 
-// Funktion zum Anzeigen von Nachrichten (maximal 3 Nachrichten)
+// Funktion zum Anzeigen von Nachrichten
 function displayNews(articles) {
   const newsList = document.getElementById("news-list");
   newsList.innerHTML = ""; // Liste zurücksetzen
