@@ -62,60 +62,43 @@ async function fetchLocalNews(city) {
       // Nachrichten nebeneinander anzeigen
       newsList.style.display = "flex";
     } else {
-      // Keine Nachrichten gefunden: Zeige Hinweistext und Witz
+      // Keine Nachrichten gefunden: Zeige Hinweistext und Random Fact
       noNewsMessage.style.display = "block";
       newsList.innerHTML = ""; // Liste zurücksetzen
 
-      // Witz hinzufügen
-      const jokeUrl = "https://v2.jokeapi.dev/joke/Any?lang=de";
-      const jokeResponse = await fetch(jokeUrl);
-      const jokeData = await jokeResponse.json();
+      // Random Fact hinzufügen
+      const factUrl =
+        "https://uselessfacts.jsph.pl/api/v2/facts/random?language=de";
+      const factResponse = await fetch(factUrl, {
+        headers: { Accept: "application/json" },
+      });
+      const factData = await factResponse.json();
 
-      let jokeText = "";
-      if (jokeData.type === "single") {
-        jokeText = jokeData.joke;
-      } else if (jokeData.type === "twopart") {
-        jokeText = `${jokeData.setup} - ${jokeData.delivery}`;
-      }
+      const factText = factData.text;
 
-      const jokeItem = document.createElement("li");
-      jokeItem.style.backgroundColor = "#b2a993";
-      jokeItem.style.color = "white";
-      jokeItem.style.padding = "20px";
-      jokeItem.style.borderRadius = "10px";
-      jokeItem.style.textAlign = "center";
-      jokeItem.innerHTML = jokeText;
+      const factItem = document.createElement("li");
+      factItem.style.backgroundColor = "#b2a993";
+      factItem.style.color = "white";
+      factItem.style.padding = "20px";
+      factItem.style.borderRadius = "10px";
+      factItem.style.textAlign = "center";
+      factItem.innerHTML = factText;
 
-      newsList.appendChild(jokeItem);
+      newsList.appendChild(factItem);
 
-      // Nur Witz anzeigen (kein Flexbox-Layout für mehrere Kacheln)
+      // Nur den Fact anzeigen (kein Flexbox-Layout für mehrere Kacheln)
       newsList.style.display = "block";
     }
   } catch (error) {
     console.error(
-      "Fehler beim Abrufen der Nachrichten oder des Witzes:",
+      "Fehler beim Abrufen der Nachrichten oder des Random Facts:",
       error
     );
     document.getElementById("news-list").innerHTML = `
       <li class="text-center text-danger">
-        Weder Nachrichten noch Witze konnten geladen werden. 😢
+        Weder Nachrichten noch Random Facts konnten geladen werden. 😢
       </li>`;
   }
-}
-
-// Funktion zum Anzeigen von Nachrichten
-function displayNews(articles) {
-  const newsList = document.getElementById("news-list");
-  newsList.innerHTML = ""; // Liste zurücksetzen
-
-  articles.forEach((article) => {
-    const listItem = document.createElement("li");
-    listItem.className = "mb-3";
-    listItem.innerHTML = `<a href="${article.url}" target="_blank" class="text-decoration-none text-primary">
-      ${article.title}
-    </a>`;
-    newsList.appendChild(listItem);
-  });
 }
 
 // Funktion zur Ermittlung des Benutzerstandorts

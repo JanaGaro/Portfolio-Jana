@@ -74,6 +74,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#more">More</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -120,9 +123,7 @@
           ></script>
         </div>
 
-        <!-- Verlinkung der geolocationNEWS.js -->
-        <script src="js/geolocationNEWS.js"></script>
-
+        <!-- Bewerbungsfoto Section -->
         <div class="col-10 col-md-4 d-md-block">
           <img src="Bilder/bewerbungsfoto.jpg" class="img-fluid" alt="" />
         </div>
@@ -274,7 +275,7 @@
       </div>
     </section>
 
-    <!-- CAREER Timeline-->
+    <!-- Career Timeline-->
     <section class="career" id="career">
       <div class="heading text-center pt-5">
         <img src="Bilder/Timeline Icon Beruf.PNG" alt="Timeline Icon Beruf" />
@@ -419,14 +420,27 @@
       </div>
     </section>
 
+    <!-- Ab hier werden einige APIs eingebunden -->
+    <section id="more" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Here are some Facts</h2>
+        <p class="text-center text-muted">
+          Ab hier werden dir interessante Daten, basierend auf deinem Standort
+          angezeigt.
+        </p>
+        <!-- Standortinformationen -->
+        <p id="location-info" class="text-center text-muted">
+          Standort wird ermittelt...
+        </p>
+      </div>
+    </section>
+
     <!-- Lokale Nachrichten Sektion -->
     <section id="location-news-section" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Lokale Nachrichten</h2>
-
-        <!-- Standortinformationen -->
-        <p id="location-info" class="text-center text-muted">
-          Standort wird ermittelt...
+        <p class="text-center text-muted">
+          Hier findest du die neuesten Nachrichten aus deiner Region.
         </p>
 
         <!-- Fallback-Nachricht (wird standardmäßig ausgeblendet) -->
@@ -442,13 +456,36 @@
         >
           Tut mir leid, aktuell haben wir keine Nachrichten in deiner Region.
           <br />
-          Aber hier ist ein Witz:
+          Aber hier ist ein Fun Fact:
         </div>
 
         <!-- Nachrichtenliste -->
         <ul id="news-list" class="list-unstyled mt-4"></ul>
       </div>
     </section>
+
+    <!-- Wetteranzeige -->
+    <section id="weather-section" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Lokale Wetterangaben</h2>
+        <div id="weather-info" class="text-center text-muted">
+          Wetterdaten werden geladen...
+        </div>
+      </div>
+    </section>
+
+    <!-- Spotify Playlist basierend auf Standort -->
+    <section id="spotify-section" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Lokale Spotify Playlist</h2>
+        <div id="spotify-playlist" class="text-center text-muted">
+          Playlist wird geladen...
+        </div>
+      </div>
+    </section>
+
+    <!-- Einbindung der geolocationSpotify.js -->
+    <script src="js/geolocationSpotify.js"></script>
 
     <!-- back to top button -->
     <button
@@ -503,6 +540,8 @@
 
     <!-- Einbindung der geolocationNEWS.js -->
     <script src="js/geolocationNEWS.js"></script>
+
+    <script src="js/geolocationWeather.js"></script>
 
     <!-- bootstrap javascript cdn link  -->
     <script

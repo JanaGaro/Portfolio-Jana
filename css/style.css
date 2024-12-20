@@ -262,7 +262,7 @@ body {
 }
 
 #news-list li:hover {
-  transform: scale(1.05); /* Vergrößert die Kachel leicht beim Hover */
+  transform: scale(1.05);
 }
 
 /* Nachrichtentext */
