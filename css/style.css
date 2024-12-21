@@ -1,7 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+@media (max-width: 768px) {
+  #about .img-fluid {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  #about .img-fluid {
+    max-width: 150px;
+  }
+}
+
 html {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* appling google font over the website  */
@@ -68,43 +82,35 @@ input:checked + .slider:before {
   transform: translateX(24px);
 }
 
-/* styling contact btn  */
-.c-btn {
-  border: none;
-  background: #b2a993;
-  color: #fff;
-  font-size: 1.2rem;
-}
-
 /* styling about section starts */
 #about {
   display: flex;
-  align-items: center; /* Vertikale Zentrierung des Inhalts */
+  align-items: center;
   justify-content: center;
 }
 
 #about .row {
-  margin-top: 50px; /* Verschiebt den gesamten Inhalt nach unten */
+  margin-top: 50px;
   margin-bottom: 0;
 }
 
 #about h1 {
-  font-size: 50px; /* Schriftgröße anpassen */
-  color: #b2a993; /* Schriftfarbe auf #b2a993 setzen */
-  font-weight: 700; /* Fettgedruckt für stärkere Betonung */
+  font-size: 50px;
+  color: #b2a993;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 #about h2 {
-  font-size: 80px; /* Schriftgröße anpassen */
-  color: #b2a993; /* Schriftfarbe auf #b2a993 setzen */
-  font-weight: 700; /* Fettgedruckt für stärkere Betonung */
+  font-size: 80px;
+  color: #b2a993;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 #about p {
-  font-size: 20px; /* Schriftgröße anpassen */
-  font-weight: 400; /* Fettgedruckt für stärkere Betonung */
+  font-size: 20px;
+  font-weight: 400;
   margin-bottom: 50px;
 }
 
@@ -129,20 +135,6 @@ input:checked + .slider:before {
   max-width: 100%;
   height: auto;
   margin-bottom: 0; /* Vermeidet zusätzlichen Abstand direkt unter dem Bild */
-}
-
-@media (max-width: 768px) {
-  #about .img-fluid {
-    max-width: 200px;
-    margin: 0 auto;
-    display: block;
-  }
-}
-
-@media (max-width: 576px) {
-  #about .img-fluid {
-    max-width: 150px;
-  }
 }
 
 /* skill section starts */
@@ -253,6 +245,21 @@ input:checked + .slider:before {
   font-size: 1.2rem;
   margin-left: 1rem;
 }
+
+/* styling contact btn  */
+.c-btn {
+  border: none;
+  background: #b2a993;
+  color: #fff;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.c-btn:hover {
+  transform: scale(1.05);
+}
+
 .contact-form .form-control:focus {
   box-shadow: none;
   border: 1px solid #b2a993;
@@ -283,7 +290,7 @@ input:checked + .slider:before {
 }
 
 #location-info {
-  font-style: italic; /* Kursiver Text */
+  font-style: italic;
   font-size: 1.2rem;
   color: #666;
   margin-bottom: 20px;
@@ -292,7 +299,7 @@ input:checked + .slider:before {
 /* Nachrichtenliste */
 #news-list {
   display: flex;
-  flex-wrap: wrap; /* Kacheln umbrechen, falls Platz nicht reicht */
+  flex-wrap: wrap;
   gap: 20px;
   padding: 0;
   justify-content: center;
