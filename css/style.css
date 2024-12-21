@@ -14,8 +14,9 @@
   }
 }
 
-html {
-  overflow: hidden;
+html,
+body {
+  overflow-x: hidden;
 }
 
 /* appling google font over the website  */
