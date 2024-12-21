@@ -58,7 +58,6 @@
           id="navbarNav"
         >
           <ul class="navbar-nav gap-4 ms-auto" style="font-size: 1.1rem">
-            <!-- align right -->
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#about">About Me</a>
             </li>
@@ -77,10 +76,18 @@
             <li class="nav-item">
               <a class="nav-link" href="#more">More</a>
             </li>
+            <!-- Toggle Switch for Dark Mode -->
+            <li class="nav-item align-self-center">
+              <label class="switch">
+                <input type="checkbox" id="mode-toggle" />
+                <span class="slider round"></span>
+              </label>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
+    <script src="js/darkmode.js"></script>
 
     <!-- ABOUT ME  -->
     <section class="pt-5" id="about">
@@ -423,7 +430,7 @@
     <!-- Ab hier werden einige APIs eingebunden -->
     <section id="more" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Here are some Facts</h2>
+        <h2 class="text-center mb-4">Here are some local Facts</h2>
         <p class="text-center text-muted">
           Ab hier werden dir interessante Daten, basierend auf deinem Standort
           angezeigt.
@@ -451,7 +458,7 @@
             text-align: center;
             margin-bottom: 20px;
             color: #b2a993;
-            font-weight: bold;
+            font-weight: 100;
           "
         >
           Tut mir leid, aktuell haben wir keine Nachrichten in deiner Region.
