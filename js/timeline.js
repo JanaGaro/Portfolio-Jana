@@ -1,19 +1,19 @@
 var careerEvents = [
   {
     date: "August 2017 - Juli 2020",
-    content: "Ausbildung zur Kauffrau EFZ, Erlach",
+    content: "Ausbildung zur Kauffrau EFZ, Einwohnergemeinde Erlach",
   },
   {
     date: "März 2020",
-    content: "Ausbildung zur Kauffrau EFZ, Le Landeron",
+    content: "Ausbildung zur Kauffrau EFZ, Commune Le Landeron",
   },
   {
     date: "Dezember 2021 - Januar 2022",
-    content: "Verwaltungsangestellte, Vinelz",
+    content: "Verwaltungsangestellte, Enwohnergemeinde Vinelz",
   },
   {
     date: "September 2020 - Juli 2023",
-    content: "Verwaltungsangestellte, Erlach",
+    content: "Verwaltungsangestellte, Einwohnergemeinde Erlach",
   },
   {
     date: "August 2023 - Heute",

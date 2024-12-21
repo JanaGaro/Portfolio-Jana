@@ -14,9 +14,9 @@
   }
 }
 
-html,
-body {
-  overflow-x: hidden;
+html {
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  overflow-y: auto; /* Ermöglicht vertikales Scrollen */
 }
 
 /* appling google font over the website  */
@@ -230,7 +230,7 @@ input:checked + .slider:before {
 
 /* contact section starts */
 .contact {
-  background-color: #f3f3f3;
+  background-color: #36363d;
 }
 
 .contact h3 {
@@ -238,6 +238,10 @@ input:checked + .slider:before {
   color: #b2a993;
 }
 
+.contact p {
+  font-size: 1.2rem;
+  color: #fff;
+}
 .contact-details i {
   font-size: 1.5rem;
   color: #b2a993;
@@ -417,6 +421,10 @@ body.dark-mode #skills {
 body.dark-mode .progress-card {
   background-color: #36363d;
   color: #b2a993;
+}
+
+body.dark-mode .contact {
+  background-color: #f3f3f3;
 }
 
 body.dark-mode #news-list li {
