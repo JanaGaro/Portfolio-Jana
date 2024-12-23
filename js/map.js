@@ -1,4 +1,5 @@
 // Funktion zur Anzeige der Karte
+// Karte wurde im HTML entfernt, da sie noch nicht verwendet wird
 function displayMap(lat, lon) {
   // Initialisiere die Karte
   const map = L.map("map").setView([lat, lon], 13); // Zoom-Stufe: 13

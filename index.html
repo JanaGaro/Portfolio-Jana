@@ -112,22 +112,25 @@
           </p>
 
           <!--- Cornify-Button --->
-          <a
-            href="http://www.cornify.com"
-            onclick="cornify_add();return false;"
-            title="Cornify"
-          >
-            <img
-              src="https://www.cornify.com/assets/cornify-button.png"
-              width="170"
-              height="60"
-              alt="Cornify"
-            />
-          </a>
-          <script
-            type="text/javascript"
-            src="https://www.cornify.com/js/cornify.js"
-          ></script>
+          <p class="text-muted">
+            Klicke auf den Cornify-Button, um die Seite zu verschönern! <br />
+            <a
+              href="http://www.cornify.com"
+              onclick="cornify_add();return false;"
+              title="Cornify"
+            >
+              <img
+                src="https://www.cornify.com/assets/cornify-button.png"
+                width="auto"
+                height="auto"
+                alt="Cornify"
+              />
+            </a>
+            <script
+              type="text/javascript"
+              src="https://www.cornify.com/js/cornify.js"
+            ></script>
+          </p>
         </div>
 
         <!-- Bewerbungsfoto Section -->
@@ -136,74 +139,6 @@
         </div>
       </div>
     </section>
-
-    <!-- expertise section starts -->
-    <!-- section class="expertise mt-5" id="expertise">
-      <div class="heading text-center">
-        <small>My Expertise</small>
-        <h3>
-          Provide Wide Range of <br />
-          Digital Services
-        </h3>
-      </div>
-      <div class="row justify-content-evenly mt-5">
-        <div class="col-10 col-md-4" data-aos="fade-up">
-          <div class="service-card">
-            <div class="img">
-              <img
-                src="Bilder/service-icon1.png"
-                alt=""
-              />
-            </div>
-            <div class="content mt-3">
-              <h4>Web Design</h4>
-              <p class="text-muted">
-                Dolor repellendus temporibus autem quibusdam officiis debitis
-                rerum neces aibus minima veniam.
-              </p>
-              <a href="" class="link">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-10" data-aos="fade-up">
-          <div class="service-card">
-            <div class="img">
-              <img
-                src="Bilder/service-icon2.png"
-                alt=""
-              />
-            </div>
-            <div class="content mt-3">
-              <h4>Web Development</h4>
-              <p class="text-muted">
-                Dolor repellendus temporibus autem quibusdam officiis debitis
-                rerum neces aibus minima veniam.
-              </p>
-              <a href="" class="link">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-10" data-aos="fade-up">
-          <div class="service-card">
-            <div class="img">
-              <img
-                src="Bilder/service-icon3.png"
-                alt=""
-              />
-            </div>
-            <div class="content mt-3">
-              <h4>Debugging</h4>
-              <p class="text-muted">
-                Dolor repellendus temporibus autem quibusdam officiis debitis
-                rerum neces aibus minima veniam.
-              </p>
-              <a href="" class="link">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section-->
-    <!-- expertise section ends here -->
 
     <!-- SKILLS -->
     <section class="skill py-5" id="skills">
@@ -232,8 +167,8 @@
           <div class="row justify-content-evenly mt-4">
             <div class="col-10 col-md-6">
               <div class="progress-card ms-3 ms-md-0">
-                <div class="circular-progress php">
-                  <span class="progress-value php-progress">0%</span>
+                <div class="circular-progress python">
+                  <span class="progress-value python-progress">0%</span>
                 </div>
                 <br />
                 <span class="text">Python</span>
@@ -241,11 +176,11 @@
             </div>
             <div class="col-10 col-md-6 mt-4 mt-md-0">
               <div class="progress-card ms-3 ms-md-0">
-                <div class="circular-progress reactjs">
-                  <span class="progress-value reactjs-progress">0%</span>
+                <div class="circular-progress rsql">
+                  <span class="progress-value rsql-progress">0%</span>
                 </div>
                 <br />
-                <span class="text">R</span>
+                <span class="text">R & SQL</span>
               </div>
             </div>
           </div>
@@ -354,8 +289,9 @@
               </p>
             </div>
             <!-- Button Unicorn Escape Game -->
+            <!-- Unicorn Escape wurde zwar als Submodule installiert, erstellt aber aufgrund diverser Fehler (alte npm Version etc.) keine Build Datei, deshalb läuft das Game über die URL -->
             <section id="unicorn-game" class="text-center my-5">
-              <h3>Play Unicorn Escape</h3>
+              <h3>Or play Unicorn Escape</h3>
               <button class="c-btn unicorn-btn mt-3 py-3 px-5 rounded-pill">
                 <a
                   href="https://unicorn-escape.surge.sh/"
@@ -447,7 +383,7 @@
       <div class="container">
         <h2 class="text-center mb-4">Lokale Nachrichten</h2>
         <p class="text-center text-muted">
-          Hier findest du die neuesten Nachrichten aus deiner Region.
+          Hier findest du die neuesten Nachrichten aus deiner Region:
         </p>
 
         <!-- Fallback-Nachricht (wird standardmäßig ausgeblendet) -->
@@ -471,17 +407,46 @@
       </div>
     </section>
 
+    <!-- Einbindung der geolocationNEWS.js -->
+    <script src="js/geolocationNEWS.js"></script>
+
     <!-- Wetteranzeige -->
     <section id="weather-section" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Lokale Wetterangaben</h2>
+        <p class="text-center text-muted">
+          Hier findest du die aktuellen Wetterdaten in deiner Region:
+        </p>
         <div id="weather-info" class="text-center text-muted">
           Wetterdaten werden geladen...
         </div>
+        <!-- Fallback-Nachricht -->
+        <p
+          id="no-weather-message"
+          style="
+            display: none;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #b2a993;
+            font-weight: 100;
+            font-size: 20px;
+          "
+        >
+          Tut mir leid, aktuell konnten keine Wetterdaten in deiner Region
+          gefunden werden.
+          <br />
+          Aber hier ist ein Katzenbild:
+        </p>
       </div>
+      <!-- Katzenbild Platzhalter -->
+      <div id="cat-images" class="text-center"></div>
     </section>
 
-    <!-- Spotify Playlist basierend auf Standort -->
+    <!-- Einbindung der geolocationWeather.js -->
+    <script src="js/geolocationWeather.js"></script>
+
+    <!-- Spotify Playlist basierend auf Standort
+     Dieser Abschnitt wird nicht angezeigt, da dieser noch keine genaueren Informationen liefert
     <section id="spotify-section" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Lokale Spotify Playlist</h2>
@@ -491,8 +456,8 @@
       </div>
     </section>
 
-    <!-- Einbindung der geolocationSpotify.js -->
-    <script src="js/geolocationSpotify.js"></script>
+    Einbindung der geolocationSpotify.js 
+    <script src="js/geolocationSpotify.js"></script> -->
 
     <!-- back to top button -->
     <button
@@ -544,11 +509,6 @@
 
       <p>Copyright 2024 | Portfolio Jana Garo | All Rights Reserved</p>
     </footer>
-
-    <!-- Einbindung der geolocationNEWS.js -->
-    <script src="js/geolocationNEWS.js"></script>
-
-    <script src="js/geolocationWeather.js"></script>
 
     <!-- bootstrap javascript cdn link  -->
     <script

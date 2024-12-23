@@ -1,7 +1,8 @@
 // Funktion zur Authentifizierung bei der Spotify API
+// Diese Funktion wurde im HTML auskommentiert, da sie noch keine Verwendung findet
 async function getSpotifyAccessToken() {
-  const clientId = "c9cbeb823ce445d58fd67c76d8b0fdb8"; // Ersetze mit deiner Spotify-Client-ID
-  const clientSecret = "96920963ad1f49bea093bba43d3bc79d"; // Ersetze mit deinem Spotify-Client-Secret
+  const clientId = "c9cbeb823ce445d58fd67c76d8b0fdb8";
+  const clientSecret = "96920963ad1f49bea093bba43d3bc79d";
 
   const tokenUrl = "https://accounts.spotify.com/api/token";
 
@@ -9,7 +10,7 @@ async function getSpotifyAccessToken() {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
-      Authorization: "Basic " + btoa(`${clientId}:${clientSecret}`), // Base64-codierte Authentifizierung
+      Authorization: "Basic " + btoa(`${clientId}:${clientSecret}`),
     },
     body: "grant_type=client_credentials",
   });

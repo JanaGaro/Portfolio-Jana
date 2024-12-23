@@ -3,7 +3,7 @@ let htmlProgress = document.querySelector(".html-css"),
   htmlValue = document.querySelector(".html-progress");
 
 let htmlStartValue = 0,
-  htmlEndValue = 90,
+  htmlEndValue = 80,
   htmlspeed = 30;
 
 let progresshtml = setInterval(() => {
@@ -24,7 +24,7 @@ let javascriptProgress = document.querySelector(".javascript"),
   javascriptValue = document.querySelector(".javascript-progress");
 
 let javascriptStartValue = 0,
-  javascriptEndValue = 75,
+  javascriptEndValue = 20,
   jsspeed = 30;
 
 let progressjs = setInterval(() => {
@@ -40,47 +40,47 @@ let progressjs = setInterval(() => {
   }
 }, jsspeed);
 
-// php progress circular bar
-let phpProgress = document.querySelector(".php"),
-  phpValue = document.querySelector(".php-progress");
+// python progress circular bar
+let pythonProgress = document.querySelector(".python"),
+  pythonValue = document.querySelector(".python-progress");
 
-let phpStartValue = 0,
-  phpEndValue = 80,
-  phpspeed = 30;
+let pythonStartValue = 0,
+  pythonEndValue = 30,
+  pythonspeed = 30;
 
 let progressphp = setInterval(() => {
-  phpStartValue++;
+  pythonStartValue++;
 
-  phpValue.textContent = `${phpStartValue}%`;
-  phpProgress.style.background = `conic-gradient(#20c997 ${
-    phpStartValue * 3.6
+  pythonValue.textContent = `${pythonStartValue}%`;
+  pythonProgress.style.background = `conic-gradient(#20c997 ${
+    pythonStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (phpStartValue == phpEndValue) {
+  if (pythonStartValue == pythonEndValue) {
     clearInterval(progressphp);
   }
-}, phpspeed);
+}, pythonspeed);
 
-// reactjs progress circular bar
-let reactProgress = document.querySelector(".reactjs"),
-  reactValue = document.querySelector(".reactjs-progress");
+// r & sql progress circular bar
+let rsqlProgress = document.querySelector(".rsql"),
+  rsqlValue = document.querySelector(".rsql-progress");
 
-let reactStartValue = 0,
-  reactEndValue = 30,
-  rjsspeed = 30;
+let rsqlStartValue = 0,
+  rsqlEndValue = 50,
+  rsqlspeed = 30;
 
 let progressreact = setInterval(() => {
-  reactStartValue++;
+  rsqlStartValue++;
 
-  reactValue.textContent = `${reactStartValue}%`;
-  reactProgress.style.background = `conic-gradient(#3f396d ${
-    reactStartValue * 3.6
+  rsqlValue.textContent = `${rsqlStartValue}%`;
+  rsqlProgress.style.background = `conic-gradient(#3f396d ${
+    rsqlStartValue * 3.6
   }deg, #ededed 0deg)`;
 
-  if (reactStartValue == reactEndValue) {
+  if (rsqlStartValue == rsqlEndValue) {
     clearInterval(progressreact);
   }
-}, rjsspeed);
+}, rsqlspeed);
 
 // filter using javascript
 $(document).ready(function () {

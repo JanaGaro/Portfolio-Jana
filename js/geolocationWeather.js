@@ -17,22 +17,37 @@ async function fetchWeather(lat, lon) {
     }
 
     const data = await response.json();
+
+    if (!data || !data.forecast || data.forecast.length === 0) {
+      displayFallbackCatMessage(
+        "Tut mir leid, aktuell konnten keine Wetterdaten in deiner Region gefunden werden. Aber hier ist ein Katzenbild:"
+      );
+      return;
+    }
+
     displayWeather(data);
   } catch (error) {
     console.error("Fehler beim Abrufen der Wetterdaten:", error);
-    document.getElementById("weather-info").innerText =
-      "Wetterdaten konnten nicht geladen werden.";
+    displayFallbackCatMessage(
+      "Tut mir leid, aktuell konnten keine Wetterdaten in deiner Region gefunden werden. Aber hier ist ein Katzenbild:"
+    );
   }
 }
 
 // Funktion zur Anzeige der Wetterdaten
 function displayWeather(data) {
   const weatherInfo = document.getElementById("weather-info");
+  const noWeatherMessage = document.getElementById("no-weather-message");
 
   if (!data || !data.forecast || data.forecast.length === 0) {
-    weatherInfo.innerText = "Keine Wetterdaten verfügbar.";
+    displayFallbackCatMessage(
+      "Tut mir leid, aktuell konnten keine Wetterdaten in deiner Region gefunden werden. Aber hier ist ein Katzenbild:"
+    );
     return;
   }
+
+  // Verstecke die Fallback-Nachricht, wenn Daten erfolgreich geladen werden
+  noWeatherMessage.style.display = "none";
 
   // Extrahiere relevante Wetterdaten
   const forecast = data.forecast[0]; // Erste Prognose (aktuelle Wetterdaten)
@@ -47,6 +62,49 @@ function displayWeather(data) {
   `;
 }
 
+// Funktion zur Anzeige der Fallback-Nachricht und eines Katzenbildes
+async function displayFallbackCatMessage(message) {
+  const weatherInfo = document.getElementById("weather-info");
+  const noWeatherMessage = document.getElementById("no-weather-message");
+  const catContainer = document.getElementById("cat-image");
+
+  // Zeige die Fallback-Nachricht an
+  noWeatherMessage.style.display = "block";
+  noWeatherMessage.innerText = message;
+
+  // Leere die Wetterinfo und lade ein Katzenbild
+  weatherInfo.innerHTML = "";
+
+  if (!catContainer) {
+    const newCatContainer = document.createElement("div");
+    newCatContainer.id = "cat-image";
+    newCatContainer.className = "text-center";
+    document.getElementById("weather-section").appendChild(newCatContainer);
+
+    const catAPI = "https://api.thecatapi.com/v1/images/search?limit=1";
+
+    // Abrufen eines Katzenbildes
+    try {
+      const response = await fetch(catAPI);
+      const data = await response.json();
+
+      newCatContainer.innerHTML = ""; // Leeren des Containers
+
+      const img = document.createElement("img");
+      img.src = data[0].url;
+      img.alt = "Niedliches Katzenbild";
+      img.className = "cat-image";
+      img.style.maxWidth = "100%";
+      img.style.marginTop = "20px";
+      newCatContainer.appendChild(img);
+    } catch (error) {
+      console.error("Fehler beim Abrufen des Katzenbildes:", error);
+      newCatContainer.innerHTML =
+        "<p>Leider konnte kein Katzenbild geladen werden. 😿</p>";
+    }
+  }
+}
+
 // Funktion zur Ermittlung des Standorts des Benutzers
 function getUserLocation() {
   if (navigator.geolocation) {
@@ -59,13 +117,15 @@ function getUserLocation() {
       },
       (error) => {
         console.error("Fehler bei der Standortermittlung:", error);
-        document.getElementById("weather-info").innerText =
-          "Standort konnte nicht ermittelt werden.";
+        displayFallbackCatMessage(
+          "Tut mir leid, wir konnten deinen Standort nicht ermitteln. Aber hier ist ein Katzenbild:"
+        );
       }
     );
   } else {
-    document.getElementById("weather-info").innerText =
-      "Geolocation wird von diesem Browser nicht unterstützt.";
+    displayFallbackCatMessage(
+      "Geolocation wird von deinem Browser nicht unterstützt. Aber hier ist ein Katzenbild:"
+    );
   }
 }
 

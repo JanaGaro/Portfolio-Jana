@@ -19,7 +19,7 @@ async function getCityFromCoordinates(lat, lon) {
       // Zeige den Ort und das Land an
       document.getElementById(
         "location-info"
-      ).innerText = `Standort: ${city}, ${country}`;
+      ).innerText = `Mein Standort: ${city}, ${country}`;
 
       // Nachrichten laden (unter Berücksichtigung von Sprache und Land)
       fetchLocalNews(city);

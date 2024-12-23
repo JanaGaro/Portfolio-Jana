@@ -152,26 +152,37 @@ input:checked + .slider:before {
   margin-bottom: 30px;
 }
 
+/* Progress Card Styling */
 .progress-card {
-  padding: 12% 10% 10% 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   background-color: #fff;
   text-align: center;
-  border-radius: 10%;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
+
 .progress-card:hover {
-  transform: scale(1.1, 1.1);
-  transition-duration: 0.6s;
+  transform: scale(1.05);
 }
+
+/* Circular Progress Bar Styling */
 .circular-progress {
   position: relative;
   height: 130px;
   width: 130px;
   border-radius: 50%;
-  background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
+  background: conic-gradient(#ededed 0deg, #ededed 360deg);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
+
 .circular-progress::before {
   content: "";
   position: absolute;
@@ -180,21 +191,24 @@ input:checked + .slider:before {
   border-radius: 50%;
   background-color: #fff;
 }
+
 .progress-value {
-  position: relative;
+  position: absolute;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: bold;
+  color: #b2a993;
 }
+
 .html-progress {
   color: #b2a993;
 }
 .javascript-progress {
   color: #b2a993;
 }
-.php-progress {
+.python-progress {
   color: #b2a993;
 }
-.reactjs-progress {
+.rsql-progress {
   color: #b2a993;
 }
 .text {
@@ -290,7 +304,7 @@ input:checked + .slider:before {
 #location-news-section h2 {
   font-size: 1.5rem;
   color: #b2a993;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 20px;
 }
 
@@ -343,6 +357,31 @@ input:checked + .slider:before {
   margin-bottom: 20px;
   color: #b2a993;
   font-weight: bold;
+}
+
+#weather-section h2 {
+  font-size: 1.5rem;
+  color: #b2a993;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+/* Styling für Katzenbilder */
+.cat-image {
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#spotify-section h2 {
+  font-size: 1.5rem;
+  color: #b2a993;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 /* footer section */
