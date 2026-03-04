@@ -120,6 +120,16 @@
             style="font-style: italic"
           ></p>
 
+          <button
+            class="c-btn h-btn mt-4 py-3 px-5 rounded-pill"
+            onclick="
+              cornify_add();
+              return false;
+            "
+          >
+            Add some Magic 🦄
+          </button>
+
           <script>
             const facts = [
               "Ich habe über 10 Pflanzen zuhause – aber definitiv keinen grünen Daumen.",
@@ -159,29 +169,10 @@
               });
           </script>
 
-          <!--- Cornify-Button --->
-          <p class="text-muted">
-            Klicke auf den Cornify-Button, um die Seite zu verschönern! <br />
-            <a
-              href="http://www.cornify.com"
-              onclick="
-                cornify_add();
-                return false;
-              "
-              title="Cornify"
-            >
-              <img
-                src="https://www.cornify.com/assets/cornify-button.png"
-                width="auto"
-                height="auto"
-                alt="Cornify"
-              />
-            </a>
-            <script
-              type="text/javascript"
-              src="https://www.cornify.com/js/cornify.js"
-            ></script>
-          </p>
+          <script
+            type="text/javascript"
+            src="https://www.cornify.com/js/cornify.js"
+          ></script>
         </div>
 
         <!-- Bewerbungsfoto Section -->
