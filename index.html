@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -101,22 +101,73 @@
           <h2>JANA GARO</h2>
           <p class="text-muted">
             Ich verbinde Struktur mit Kreativität, Strategie mit Design und
-            Technik mit Menschen. Als Wirtschaftsinformatikerin bewege ich mich
-            an der Schnittstelle von digitalen Systemen, Prozessen und
-            Kommunikation. Ich analysiere, strukturiere, hinterfrage – und
-            entwickle Lösungen, die nicht nur funktionieren, sondern Sinn
-            ergeben. Gleichzeitig schlägt mein Herz für Gestaltung,
-            Markenentwicklung und digitale Konzepte. Mich fasziniert, wie aus
-            klarer Struktur visuelle Identität entsteht und wie Komplexität
-            durch gutes Design verständlich wird.
+            Technik mit Menschen. Als Wirtschaftsinformatikerin interessiere ich
+            mich für die Schnittstelle von digitalen Systemen, Prozessen und
+            Gestaltung. Ich analysiere, strukturiere und entwickle Lösungen, die
+            komplexe Zusammenhänge verständlich und nutzbar machen. Mich
+            fasziniert, wie aus klarer Struktur gute Konzepte entstehen.
           </p>
+
+          <button
+            class="c-btn h-btn mt-4 py-3 px-5 rounded-pill"
+            id="random-fact-btn"
+          >
+            Random Facts über mich
+          </button>
+          <p
+            id="random-fact"
+            class="mt-3 text-muted"
+            style="font-style: italic"
+          ></p>
+
+          <script>
+            const facts = [
+              "Ich habe über 10 Pflanzen zuhause – aber definitiv keinen grünen Daumen.",
+              "Nach einer Treppe bin ich komplett ausser Atem.",
+              "Ich bin ein bisschen ein Monk – Ordnung und Struktur machen mich glücklich.",
+              "Manchmal putze ich lieber, als das zu tun, was ich eigentlich erledigen sollte.",
+              "Ich hatte einmal ein Meerschweinchen namens Tweety.",
+              "Ich kann mich stundenlang mit Layouts, Farben und Designideen beschäftigen.",
+              "Reisen und neue Orte entdecken inspirieren mich sehr.",
+              "Wenn mich ein Thema interessiert, tauche ich komplett in Ideen und Konzepte ein.",
+              "Ich mag minimalistisches Design, auch wenn mein Kopf manchmal alles andere als minimalistisch ist.",
+              "Ich freue mich über kleine, gut durchdachte Details.",
+              "Ich habe eine Schwäche für Templates, Systeme und klare Strukturen.",
+              "Ich denke gerne analytisch – aber genauso kreativ.",
+              "Gute Ideen kommen mir oft unter der Dusche oder beim Spazieren.",
+              "Ich mag es, wenn Dinge klar, logisch und schön gestaltet sind.",
+              "Mein Kopf ist oft eine Mischung aus Strategie, Kreativität und Chaos.",
+              "Ich liebe es, komplexe Dinge zu strukturieren und verständlich zu machen.",
+              "Mein Kopf arbeitet oft wie ein Prozessdiagramm – alles hat einen Ablauf.",
+              "Ich bewege mich gerne zwischen Technologie, Design und Strategie.",
+              "Wenn ich ein System sehe, überlege ich automatisch: Wie könnte man das optimieren?",
+              "Ich arbeite am liebsten an Projekten, bei denen Struktur und Kreativität zusammenkommen.",
+              "Matcha gehört zu meinem Alltag.",
+              "Ich liebe Orte mit Charakter – Architektur, Cafés und Städte mit Geschichte.",
+              "Ich plane Dinge gerne strategisch, lasse aber Raum für spontane Ideen.",
+              "Gute Organisation gibt mir Ruhe im Kopf.",
+              "Ich bin ein kleines Konsumopfer.",
+              "Und ich könnte problemlos jeden Tag eine Packung Chips essen.",
+            ];
+
+            document
+              .getElementById("random-fact-btn")
+              .addEventListener("click", function () {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                document.getElementById("random-fact").textContent =
+                  facts[randomIndex];
+              });
+          </script>
 
           <!--- Cornify-Button --->
           <p class="text-muted">
             Klicke auf den Cornify-Button, um die Seite zu verschönern! <br />
             <a
               href="http://www.cornify.com"
-              onclick="cornify_add();return false;"
+              onclick="
+                cornify_add();
+                return false;
+              "
               title="Cornify"
             >
               <img
