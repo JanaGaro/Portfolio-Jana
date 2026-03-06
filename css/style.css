@@ -138,6 +138,25 @@ input:checked + .slider:before {
   margin-bottom: 0; /* Vermeidet zusätzlichen Abstand direkt unter dem Bild */
 }
 
+/* styling personalinfo section starts */
+#personalinfo {
+  background-color: #36363d;
+  border: 0;
+}
+
+#personalinfo h3 {
+  color: #b2a993;
+  font-weight: 700;
+}
+
+#personalinfo p {
+  color: #fff;
+}
+
+#personalinfo p {
+  margin-bottom: 30px;
+}
+
 /* skill section starts */
 #skills {
   background-color: #36363d;
